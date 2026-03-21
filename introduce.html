@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>介紹</title>
+    <style>
+        /* 全頁背景 */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
+
+        /* 文字容器 */
+        .one-liner {
+            font-size: 1.8rem;
+            color: #fff;
+            text-align: center;
+            max-width: 80%;
+            line-height: 1.6;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease forwards;
+        }
+
+        /* 打字效果 */
+        .typing {
+            border-right: 2px solid #fff;
+            white-space: pre-wrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: typing 15s steps(300, end), blink 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* 滑鼠移過變色 */
+        .one-liner:hover {
+            color: #00ffff;
+            text-shadow: 4px 4px 20px rgba(0,255,255,0.7);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="one-liner">
+        <span class="typing">
+日本利用壓電磁磚將腳步轉化為電能。這些瓷磚捕捉來自你腳步的動能。當你行走時，你的重量和動作會對瓷磚產生壓力。磁磚會輕微彎曲，從而產生機械應力。磁磚內部的壓電材料將這種應力轉化為電能。每一步都會產生少量電荷，而數百萬步結合在一起就能產生足夠的電力來驅動 LED燈、數位顯示器和感測器。在像澀谷車站這樣繁忙的地方，每天大約有 240 萬個腳步為此系統作出貢獻。這些電能可以被儲存或立即使用，從而減少對傳統電力的依賴，並支持永續的城市基礎設施。這種方法將日常運動轉化為實用的再生能源。
+        </span>
+    </div>
+</body>
+</html>

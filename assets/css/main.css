@@ -3219,3 +3219,42 @@ input, select, textarea {
 			}
 
 	}
+
+	#navbar {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		background: rgba(44, 62, 80, 0.9);
+		z-index: 999;
+	  }
+	  
+	  #navbar ul {
+		display: flex;
+		justify-content: center;
+		margin: 0;
+		padding: 10px;
+		list-style: none;
+	  }
+	  
+	  #navbar li {
+		margin: 0 15px;
+	  }
+	  
+	  #navbar a {
+		color: white;
+		text-decoration: none;
+		font-weight: 500;
+		transition: 0.3s;
+	  }
+	  
+	  #navbar a:hover {
+		color: #4ca1af;
+	  }
+
+	  html {
+		scroll-behavior: smooth;
+	  }
+
+	  section {
+		scroll-margin-top: 70px;
+	  }

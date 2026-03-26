@@ -13,13 +13,34 @@
 	</head>
 	<body class="is-preload">
 		<nav id="navbar">
-			<ul>
-			  <li><a href="#one">自我介紹</a></li>
-			  <li><a href="#my-courses">課程</a></li>
-			  <li><a href="#two">關於我</a></li>
-			  <li><a href="#three">聯絡我</a></li>
-			</ul>
+			<div class="nav-container">
+			  
+			  <!-- 左邊 Logo -->
+			  <div class="logo">曾奕云</div>
+		  
+			  <!-- 導覽連結 -->
+			  <ul class="nav-links">
+				<li><a href="#one">自我介紹</a></li>
+				<li><a href="#my-courses">課程</a></li>
+				<li><a href="#two">關於我</a></li>
+				<li><a href="#three">聯絡我</a></li>
+			  </ul>
+		  
+			  <!-- 右邊 漢堡 -->
+			  <div class="menu-toggle" id="menu-toggle">☰</div>
+		  
+			</div>
 		  </nav>
+		  <!-- 半透明背景 -->
+<div id="overlay"></div>
+
+<!-- 側邊選單 -->
+<div id="side-menu">
+  <a href="#one">自我介紹</a>
+  <a href="#my-courses">課程</a>
+  <a href="#two">關於我</a>
+  <a href="#three">聯絡我</a>
+</div>
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
@@ -661,5 +682,67 @@ form.addEventListener("submit", e => {
   });
 });
 </script>
+<script>
+	// 漢堡選單
+	const toggle = document.getElementById("menu-toggle");
+	const navLinks = document.querySelector(".nav-links");
+	
+	toggle.addEventListener("click", () => {
+	  navLinks.classList.toggle("show");
+	});
+	
+	// 滾動變透明
+	window.addEventListener("scroll", () => {
+	  const navbar = document.getElementById("navbar");
+	  navbar.classList.toggle("scrolled", window.scrollY > 50);
+	});
+	
+	// ⭐ 高亮目前區塊
+	const sections = document.querySelectorAll("section");
+	const navItems = document.querySelectorAll(".nav-links a");
+	
+	window.addEventListener("scroll", () => {
+	  let current = "";
+	
+	  sections.forEach(section => {
+		const sectionTop = section.offsetTop - 100;
+		if (window.scrollY >= sectionTop) {
+		  current = section.getAttribute("id");
+		}
+	  });
+	
+	  navItems.forEach(link => {
+		link.classList.remove("active");
+		if (link.getAttribute("href") === "#" + current) {
+		  link.classList.add("active");
+		}
+	  });
+	});
+	</script>
+	<script>
+		const menuBtn = document.getElementById("menu-toggle");
+		const sideMenu = document.getElementById("side-menu");
+		const overlay = document.getElementById("overlay");
+		
+		// 開啟選單
+		menuBtn.addEventListener("click", () => {
+		  sideMenu.classList.add("active");
+		  overlay.classList.add("active");
+		});
+		
+		// 點背景關閉
+		overlay.addEventListener("click", () => {
+		  sideMenu.classList.remove("active");
+		  overlay.classList.remove("active");
+		});
+		
+		// 點選單也自動關閉（加分✨）
+		document.querySelectorAll("#side-menu a").forEach(link => {
+		  link.addEventListener("click", () => {
+			sideMenu.classList.remove("active");
+			overlay.classList.remove("active");
+		  });
+		});
+		</script>
 	</body>
 </html>

@@ -22,6 +22,7 @@
 			  <ul class="nav-links">
 				<li><a href="#one">自我介紹</a></li>
 				<li><a href="#my-courses">課程</a></li>
+				<li><a href="#projects">作品</a></li>
 				<li><a href="#two">關於我</a></li>
 				<li><a href="#three">聯絡我</a></li>
 			  </ul>
@@ -38,6 +39,7 @@
 <div id="side-menu">
   <a href="#one">自我介紹</a>
   <a href="#my-courses">課程</a>
+  <a href="#projects">作品</a>
   <a href="#two">關於我</a>
   <a href="#three">聯絡我</a>
 </div>
@@ -177,6 +179,41 @@
     <div class="course-card">動態程式語言</div>
   </div>
 </section>
+
+<section id="projects" style="padding:40px; max-width:900px; margin:auto;">
+	<h2 style="text-align:center;">💻 我的作品</h2>
+
+	<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px; margin-top:30px;">
+
+		<div class="project-card">
+			<h3>倒水管</h3>
+			<p>Water-Color-Sort</p>
+			<a href="https://tzengyi-yun.github.io/Water-Color-Sort-0325/" target="_blank" class="button">查看作品</a>
+		</div>
+
+		<div class="project-card">
+			<h3>踩地雷</h3>
+			<p>Mine-Sweeper</p>
+			<a href="https://tzengyi-yun.github.io/Mine-Sweeper/" target="_blank" class="button">查看作品</a>
+		</div>
+
+	</div>
+</section>
+
+<style>
+.project-card {
+	background: #fff;
+	padding: 20px;
+	border-radius: 12px;
+	box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+	text-align: center;
+	transition: 0.2s;
+}
+.project-card:hover {
+	transform: translateY(-5px);
+}
+</style>
+
 
 <style>
 .course-card {
